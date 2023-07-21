@@ -1,0 +1,40 @@
+/* MyHexButton.css */
+.hex-btn {
+  width: 60px;
+  height: 34.64px;
+  background-color: #01be96;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  clip-path: polygon(50% 0%, 90% 25%, 90% 75%, 50% 100%, 10% 75%, 10% 25%);
+  animation: spin-anticlockwise 1s linear infinite; /* Initial anticlockwise rotation */
+}
+
+.icon {
+  font-size: 24px;
+  color: #fff;
+}
+
+.spinning-clockwise {
+  animation: spin-clockwise 1s linear infinite;
+}
+
+.spinning-anticlockwise {
+  animation: spin-anticlockwise 1s linear infinite;
+  animation-play-state: paused; /* Initially paused until hover */
+}
+
+@keyframes spin-clockwise {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-anticlockwise {
+  100% {
+    transform: rotate(0deg); /* Rotate back to the initial state */
+  }
+}

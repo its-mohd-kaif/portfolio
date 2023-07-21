@@ -1,0 +1,26 @@
+/* MyNavbar.css */
+.custom-navbar {
+  background: linear-gradient(159deg, #2d2d3a, #2b2b35);
+  padding: 1em !important;
+}
+
+.nav-link-animate {
+  position: relative;
+  text-decoration: none;
+  color: #fff; /* Change color as needed */
+}
+
+.nav-link-animate::before {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Adjust the value to control the distance between the link text and the underline */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff; /* Change the color of the underline as needed */
+  transition: width 0.3s; /* Adjust the duration of the animation as needed */
+}
+
+.nav-link-animate:hover::before {
+  width: 100%;
+}

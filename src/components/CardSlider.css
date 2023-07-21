@@ -1,0 +1,136 @@
+/* Carousel.css */
+
+:root {
+  --primary: #2C2C37; /* background */
+  --secondary: #28262c; /* black */
+  --tertiary: #ac90d0; /* light-purple */
+  --accent: #7f54b3; /* purple */
+  --white: #fff;
+  --highlighted: #01BE96; /* highlighted color */
+}
+
+.carousel {
+  max-width: 100%;
+  background-color: var(--primary);
+  padding: 2rem;
+  border-radius: 0.8rem;
+  color: var(--white);
+  text-align: center;
+
+  /* Add the border using the highlighted color */
+  border: 1px solid var(--highlighted);
+
+  position: relative;
+
+  @media only screen and (min-width: 37.5em) {
+    max-width: 80rem;
+    margin: 2rem;
+    gap: 2rem;
+    padding: 3rem;
+    /* display: flex; */
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.carousel__img-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carousel__image {
+  width: 80%;
+  border-radius: 0.8rem;
+  object-fit: cover;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.carousel__btn {
+  /* Transparent background */
+  background-color: transparent;
+  border: 1px solid var(--highlighted);
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Set the arrow color to the highlighted color */
+  color: var(--highlighted);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* On hover, reverse the colors */
+.carousel__btn:hover {
+  background-color: var(--highlighted);
+  color: var(--white);
+}
+
+ion-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  /* Set the icon color to the highlighted color */
+  color: var(--highlighted);
+}
+.carousel__btn--left {
+  left: 2rem;
+}
+
+.carousel__btn--right {
+  right: 2rem;
+}
+
+ion-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: var(--white); /* Set the icon color to white to match the button background */
+}
+
+.testimonial {
+  padding: 2rem;
+}
+
+.testimonial__text {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-bottom: 2rem;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.testimonial__name {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.testimonial__job {
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+
+/* Define the CSS class for the anchor tag */
+.link {
+  color: #01BE96;
+  text-decoration: underline;
+  
+}
+
+/* Define the hover styles for the anchor tag */
+.link:hover {
+  color: #01BE96;
+  text-decoration: none;
+  
+}
