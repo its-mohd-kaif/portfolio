@@ -1,4 +1,5 @@
-import React from "react";
+import Aos from "aos";
+import React, { useEffect } from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { BiPhoneCall } from "react-icons/bi";
 import { HiOutlineMailOpen } from "react-icons/hi";
@@ -11,19 +12,31 @@ function Footer() {
     const phoneLink = `tel:${phoneNumber}`;
     window.open(phoneLink, "_self");
   };
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      offset: 300,
+      easing: "ease-in-sine",
+    });
+  }, []);
   return (
     <div
       style={{
-        marginLeft: "3em",
-        marginRight: "3em",
-        padding: "1em",
         background: "#191923",
         marginTop: "3em",
       }}
       id="contact"
+      className="outer-container"
     >
       <div className="d-flex justify-content-between">
-        <div style={{ width: "50%" }} className="column1">
+        <div
+          data-aos="fade-right"
+          data-aos-offset="200"
+          data-aos-easing="ease-in-sine"
+          style={{ width: "50%" }}
+          className="column1"
+        >
           <h2>Contact</h2>
           <h5 className="fw-normal">Address:</h5>
           <p className="lead fs-6 fw-lighter testimonial__text">
@@ -42,7 +55,10 @@ function Footer() {
             </a>
           </div>
           <div style={{ marginTop: "-1em" }} className="email-container">
-            <a href={`mailto:${emailAddress}`} className="email-link d-flex lead fs-6 fw-lighter testimonial__text">
+            <a
+              href={`mailto:${emailAddress}`}
+              className="email-link d-flex lead fs-6 fw-lighter testimonial__text"
+            >
               <p className="logo-icon">
                 <HiOutlineMailOpen size={18} />
               </p>
@@ -50,7 +66,13 @@ function Footer() {
             </a>
           </div>
         </div>
-        <div style={{ width: "50%" }}>
+        <div
+          data-aos="fade-left"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="500"
+          data-aos-duration="500"
+          style={{ width: "50%" }}
+        >
           <h2 className="fw-normal">Profiles</h2>
           <div class="d-flex align-items-center">
             <button

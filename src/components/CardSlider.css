@@ -27,10 +27,12 @@
     margin: 2rem;
     gap: 2rem;
     padding: 3rem;
-    /* display: flex; */
-    flex-direction: row;
     align-items: center;
     justify-content: center;
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 1.5rem; /* Adjust padding for smaller screens */
   }
 }
 .carousel__img-container {
@@ -39,6 +41,9 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  @media only screen and (max-width: 768px) {
+    flex: 2; /* Adjust the flex value for smaller screens */
+  }
 }
 
 .carousel__image {
@@ -46,6 +51,9 @@
   border-radius: 0.8rem;
   object-fit: cover;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  @media only screen and (max-width: 768px) {
+    width: 100%; /* Make the image full-width on smaller screens */
+  }
 }
 
 .carousel__btn {
@@ -69,6 +77,10 @@
   /* Set the arrow color to the highlighted color */
   color: var(--highlighted);
   transition: background-color 0.3s ease, color 0.3s ease;
+  @media only screen and (max-width: 768px) {
+    height: 3rem; /* Adjust the button height for smaller screens */
+    width: 3rem; /* Adjust the button width for smaller screens */
+  }
 }
 
 /* On hover, reverse the colors */
@@ -77,12 +89,6 @@
   color: var(--white);
 }
 
-ion-icon {
-  height: 2.4rem;
-  width: 2.4rem;
-  /* Set the icon color to the highlighted color */
-  color: var(--highlighted);
-}
 .carousel__btn--left {
   left: 2rem;
 }
@@ -94,11 +100,13 @@ ion-icon {
 ion-icon {
   height: 2.4rem;
   width: 2.4rem;
-  color: var(--white); /* Set the icon color to white to match the button background */
+  /* Set the icon color to the highlighted color */
+  color: var(--highlighted);
 }
 
 .testimonial {
   padding: 2rem;
+  
 }
 
 .testimonial__text {
@@ -107,6 +115,11 @@ ion-icon {
   margin-bottom: 2rem;
   max-width: 40rem;
   margin: 0 auto;
+  @media only screen and (max-width: 768px) {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+    line-height: 1.6rem; /* Adjust line height for smaller screens */
+    max-width: 100%; /* Make the text full-width on smaller screens */
+  }
 }
 
 .testimonial__name {
@@ -134,3 +147,5 @@ ion-icon {
   text-decoration: none;
   
 }
+
+

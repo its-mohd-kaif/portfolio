@@ -1,17 +1,57 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Button } from "react-bootstrap";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import kaif from "../assets/kaif.png";
+import { useEffect } from "react";
+import AOS from "aos";
+import { TypeAnimation } from "react-type-animation";
+import Typed from "typed.js";
 function Home() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      offset: 300,
+      easing: "ease-in-sine",
+    });
+  }, []);
+  const typedRef = useRef(null);
+
+  
+  useEffect(() => {
+    // Initialize the Typed.js instance after the component mounts
+    const options = {
+      strings: ['Mohd Kaif'],
+      typeSpeed: 120,
+      showCursor: false, // Hide the cursor after typing is completed
+    };
+
+    const typed = new Typed(typedRef.current, options);
+
+    // Clear the Typed instance after one second
+    const timer = setTimeout(() => {
+      // typed.destroy();
+    }, 1000);
+
+    // Clear the timer when the component unmounts
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
   return (
-    <div id="home" style={{ marginLeft: "3em", marginRight: "3em" ,padding:"1em"}}>
-      <div class="d-flex justify-content-between">
-        <div style={{ width: "70%" }} className="column1">
+    <div id="home" className="outer-container">
+      <div class="custom-flex">
+        <div
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+          className="column1-Home"
+        >
           <p>
             Hello, <span style={{ color: "#01BE96" }}>I am</span>
           </p>
-          <h1 style={{ color: "#01BE96" }}>Mohd Kaif</h1>
+          <h1 ref={typedRef} style={{ color: "#01BE96" }}></h1>
           <h4>Frontend Developer</h4>
+
           <p className="lead fs-6 fw-lighter">
             Experienced frontend developer with a focus on{" "}
             <span className="fw-bold" style={{ color: "#01BE96" }}>
@@ -40,7 +80,9 @@ function Home() {
             results and create impactful web experiences.
           </p>
           <br></br>
-          <Button href="#contact" className="lets-talk-btn">Let's Talk</Button>
+          <Button href="#contact" className="lets-talk-btn">
+            Let's Talk
+          </Button>
           <br></br>
           <br></br>
           <div class="d-flex align-items-center">
@@ -70,15 +112,11 @@ function Home() {
           <br></br>
         </div>
         <div
-          className="column2 rounded-circle d-inline-block image-container"
-          style={{
-            width: "250px",
-            height: "250px",
-            backgroundColor: "#01BE96",
-            overflow: "hidden",
-            position: "relative",
-            transition: "transform 0.3s ease", // Add the transition for the transform effect
-          }}
+          data-aos="fade-left"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="500"
+          data-aos-duration="500"
+          className="column2-Home rounded-circle d-inline-block image-container"
         >
           <img
             src={kaif}

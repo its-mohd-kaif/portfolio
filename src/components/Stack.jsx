@@ -1,25 +1,31 @@
-import React from "react";
+import Aos from "aos";
+import React, { useEffect } from "react";
 import { AiFillCode } from "react-icons/ai";
 import { FaPencilRuler, FaTools } from "react-icons/fa";
 
 function Stack() {
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      offset: 300,
+      easing: "ease-in-sine",
+    });
+  }, []);
   return (
     <div
       style={{
-        marginLeft: "3em",
-        marginRight: "3em",
-        padding: "1em",
         background: "#191923",
       }}
       id="stack"
+      className="outer-container"
     >
       <p>
         My <span style={{ color: "#01BE96" }}>stack</span>
       </p>
       <h1>What do I Do</h1>
       <br></br>
-      <div class="d-flex justify-content-between">
-        <div style={{ width: "30%" }} className="stack-column">
+      <div class="main-stack">
+        <div data-aos="fade-right" className="stack-column">
           <div className="d-flex align-items-center justify-content-center">
             <AiFillCode color="#01BE96" size={75} />
           </div>
@@ -34,7 +40,10 @@ function Stack() {
           </div>
         </div>
 
-        <div style={{ width: "30%" }} className="stack-column">
+        <div
+          className="stack-column"
+          data-aos="fade-up"
+        >
           <div className="d-flex align-items-center justify-content-center">
             <FaPencilRuler color="#01BE96" size={65} />
           </div>
@@ -49,7 +58,10 @@ function Stack() {
           </div>
         </div>
 
-        <div style={{ width: "30%" }} className="stack-column">
+        <div
+          className="stack-column"
+          data-aos="fade-left"
+        >
           <div className="d-flex align-items-center justify-content-center">
             <FaTools color="#01BE96" size={65} />
           </div>
