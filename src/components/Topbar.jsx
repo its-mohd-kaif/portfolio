@@ -1,8 +1,7 @@
 import Aos from "aos";
-import React, { useEffect, useState } from "react";
-import Container from "react-bootstrap/Container";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
-import { MdClose } from "react-icons/md"; // Import the close icon
+import { MdClose } from "react-icons/md";
 import "./MyNavbar.css";
 
 function Topbar() {
@@ -28,39 +27,6 @@ function Topbar() {
       </text>
     </svg>
   `;
-
-  // State to manage the menu open/close
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // Function to toggle the menu and close it on link clicks
-  const toggleMenu = () => {
-    setIsMenuOpen(true);
-  };
-
-  // Function to close the menu
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-  // Reset isMenuOpen state when the window is resized
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMenuOpen(false);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    Aos.init({
-      duration: 1000,
-      offset: 300,
-      easing: "ease-in-sine",
-    });
-  }, []);
-
   return (
     <div>
       <Navbar className="custom-navbar" variant="dark" expand="sm">
@@ -76,47 +42,28 @@ function Topbar() {
           />{" "}
           Portfolio
         </Navbar.Brand>
-        <Navbar.Toggle
-          className={isMenuOpen ? "open" : ""}
-          onClick={toggleMenu}
-        />
-        <Navbar.Collapse
-          className={`justify-content-end ${
-            isMenuOpen ? "show-menu" : "initial-menu"
-          }`}
-          data-aos="fade-down"
-          data-aos-easing="linear"
-          data-aos-duration="1500"
-        >
+        <Navbar.Toggle />
+        <Navbar.Collapse className={`justify-content-end`}>
           <Navbar.Text className="me-3">
-            <a href="#home" className="nav-link-animate" onClick={toggleMenu}>
+            <a href="#home" className="nav-link-animate">
               Home
             </a>
           </Navbar.Text>
           <Navbar.Text className="me-3">
-            <a href="#stack" className="nav-link-animate" onClick={toggleMenu}>
+            <a href="#stack" className="nav-link-animate">
               Stack
             </a>
           </Navbar.Text>
           <Navbar.Text className="me-3">
-            <a
-              href="#projects"
-              className="nav-link-animate"
-              onClick={toggleMenu}
-            >
+            <a href="#projects" className="nav-link-animate">
               Projects
             </a>
           </Navbar.Text>
           <Navbar.Text className="me-3">
-            <a
-              href="#contact"
-              className="nav-link-animate"
-              onClick={toggleMenu}
-            >
+            <a href="#contact" className="nav-link-animate">
               Contact
             </a>
           </Navbar.Text>
-          {isMenuOpen && <MdClose className="close-icon" onClick={closeMenu} />}
         </Navbar.Collapse>
       </Navbar>
     </div>

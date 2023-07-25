@@ -25,7 +25,7 @@ function Stack() {
       <h1>What do I Do</h1>
       <br></br>
       <div class="main-stack">
-        <div data-aos="fade-right" className="stack-column">
+        <div data-aos="fade-down" className="stack-column">
           <div className="d-flex align-items-center justify-content-center">
             <AiFillCode color="#01BE96" size={75} />
           </div>
@@ -60,7 +60,7 @@ function Stack() {
 
         <div
           className="stack-column"
-          data-aos="fade-left"
+          data-aos="fade-down"
         >
           <div className="d-flex align-items-center justify-content-center">
             <FaTools color="#01BE96" size={65} />
