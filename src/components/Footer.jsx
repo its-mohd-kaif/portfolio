@@ -3,9 +3,19 @@ import React, { useEffect } from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { BiPhoneCall } from "react-icons/bi";
 import { HiOutlineMailOpen } from "react-icons/hi";
+import mapboxgl from "mapbox-gl"; // Make sure you've installed 'mapbox-gl' package
+import MapView from "./MapView";
+
+mapboxgl.accessToken =
+  "pk.eyJ1IjoibW9oZGthaWYxNSIsImEiOiJjbGp3aXlxOWUwMm15M2tud3R5NXJ3ZHh1In0.2rDw475fje7HJjxTxiT61Q";
 function Footer() {
   const phoneNumber = "+918318155149";
   const emailAddress = "kaifmohamman5990@gmail.com";
+
+  const latitude = 26.483391908735697;
+  const longitude = 80.29443669197339;
+
+  const homeLocation = [26.483391908735697, 80.29443669197339];
 
   const handlePhoneClick = () => {
     // Implement your logic to open the dial pad here
@@ -20,6 +30,7 @@ function Footer() {
       easing: "ease-in-sine",
     });
   }, []);
+
   return (
     <div
       style={{
@@ -31,11 +42,10 @@ function Footer() {
     >
       <div className="d-flex justify-content-between">
         <div
-          data-aos="fade-right"
+          data-aos="fade-down"
           data-aos-offset="200"
           data-aos-easing="ease-in-sine"
-          style={{ width: "50%" }}
-          className="column1"
+          className="column-footer"
         >
           <h2>Contact</h2>
           <h5 className="fw-normal">Address:</h5>
@@ -51,7 +61,7 @@ function Footer() {
               onClick={handlePhoneClick}
             >
               <BiPhoneCall size={18} className="logo-icon" />
-              <p className="ms-2">{phoneNumber}</p>
+              <p style={{ marginTop: "-0.3em" }} className="ms-2">{phoneNumber}</p>
             </a>
           </div>
           <div style={{ marginTop: "-1em" }} className="email-container">
@@ -67,11 +77,11 @@ function Footer() {
           </div>
         </div>
         <div
-          data-aos="fade-left"
+          data-aos="fade-up"
           data-aos-anchor="#example-anchor"
           data-aos-offset="500"
           data-aos-duration="500"
-          style={{ width: "50%" }}
+          className="column-footer"
         >
           <h2 className="fw-normal">Profiles</h2>
           <div class="d-flex align-items-center">
@@ -97,6 +107,16 @@ function Footer() {
               <AiFillLinkedin size={25} className="icon" />
             </button>
           </div>
+        </div>
+        <div
+          className="column-footer mt-4"
+          style={{ height: "300px", position: "relative" }}
+          data-aos="fade-down"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="500"
+          data-aos-duration="500"
+        >
+          <MapView latitude={latitude} longitude={longitude} />
         </div>
       </div>
     </div>

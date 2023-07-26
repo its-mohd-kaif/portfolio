@@ -254,3 +254,20 @@
   }
 
 }
+
+/* Updated CSS for the glass card */
+.glass-card {
+  text-align: center;
+  font-weight: bold;
+}
+
+.column-footer{
+  width: 33%;
+}
+
+
+@media only screen and (max-width: 770px) {
+  .column-footer{
+    width: 100%;
+  }
+}

@@ -12,7 +12,7 @@ function App() {
         <Home />
         <Stack />
         <CardSlider />
-        <Footer />
+        <Footer/>
       </div>
     </div>
   );

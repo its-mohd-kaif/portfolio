@@ -39,6 +39,7 @@ const CardSlider = () => {
         My <span style={{ color: "#01BE96" }}>projects</span>
       </p>
       <h1>Recent Projects</h1>
+      <center>
       <div className="carousel">
         {/* Wrap the carousel content inside an anchor tag */}
 
@@ -81,6 +82,7 @@ const CardSlider = () => {
           <AiFillCaretRight /> {/* Use the react-icons component */}
         </button>
       </div>
+      </center>
     </div>
   );
 };
